@@ -97,3 +97,18 @@ button#ai-generate {
   margin-top: 8px; font-size: 0.8rem; color: #a7f3d0;
   background: rgba(16, 185, 129, 0.12); padding: 8px 10px; border-radius: 6px;
 }
+.theme-wrap { display: flex; align-items: center; gap: 6px; }
+.inline-lbl { font-size: 0.75rem; color: var(--muted); text-transform: none; margin: 0; }
+input[type="text"] {
+  width: 100%; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text); font-size: 0.9rem;
+}
+.bonus-grid {
+  margin-top: 8px; display: grid; gap: 5px; padding: 8px 10px;
+  background: var(--accent-soft); border-radius: 6px; font-size: 0.8rem;
+}
+.bonus-grid div strong { color: var(--accent); }
+.prep-box {
+  margin-top: 8px; padding: 8px 10px; border-radius: 6px;
+  background: var(--card); border: 1px solid var(--border); font-size: 0.8rem; line-height: 1.45;
+}
