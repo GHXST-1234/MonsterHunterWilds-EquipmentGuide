@@ -1,1 +1,89 @@
+{
+  "weapons": [
+    "Great Sword", "Long Sword", "Sword & Shield", "Dual Blades",
+    "Hammer", "Hunting Horn", "Lance", "Gunlance",
+    "Switch Axe", "Charge Blade", "Insect Glaive", "Light Bowgun",
+    "Heavy Bowgun", "Bow"
+  ],
+  "monsters": [
+    { "name": "All Monsters (General Meta)", "weakness": "Dragon / Blast", "resist": "None" },
+    { "name": "Arkveld", "weakness": "Dragon", "resist": "Dragonblight / Physical" },
+    { "name": "Gore Magala", "weakness": "Fire / Dragon", "resist": "Frenzy Virus" },
+    { "name": "Rey Dau", "weakness": "Ice", "resist": "Thunder / Stun" },
+    { "name": "Jin Dahaad", "weakness": "Fire", "resist": "Ice / Frostblight" },
+    { "name": "Nu Udra", "weakness": "Water", "resist": "Fire / Blast" },
+    { "name": "Uth Duna", "weakness": "Thunder", "resist": "Water" },
+    { "name": "Rathalos", "weakness": "Dragon / Thunder", "resist": "Fire / Poison" }
+  ],
+  "builds": [
+    {
+      "title": "Endgame Gore-Arkveld Meta DPS",
+      "weapon": "All Weapons",
+      "monster": "All Monsters (General Meta)",
+      "type": "Meta DPS",
+      "gear": {
+        "Weapon": "Artian Tier 8 (Affinity/Element Roll)",
+        "Helm": "Gore Helm Beta",
+        "Chest": "Arkvulcan Mail Beta",
+        "Arms": "Gore Vambraces Beta",
+        "Waist": "Arkvulcan Coil Beta",
+        "Legs": "Gore Greaves Beta",
+        "Talisman": "Challenger Charm II (Agitator)"
+      },
+      "skills": "Agitator 5, Weakness Exploit 5, Antivirus 3, Maximum Might 3, Burst 1",
+      "tip": "Clear Frenzy quickly to trigger +15% Affinity from Antivirus + Black Eclipse."
+    },
+    {
+      "title": "Rey Dau Ice Counter & Stunproof",
+      "weapon": "All Weapons",
+      "monster": "Rey Dau",
+      "type": "Elemental Counter",
+      "gear": {
+        "Weapon": "Jin Dahaad / Ice Artian Weapon",
+        "Helm": "Dahaad Shardhelm Beta",
+        "Chest": "Arkvulcan Mail Beta",
+        "Arms": "Dahaad Shardbraces Beta",
+        "Waist": "Rey Sandcoil Beta",
+        "Legs": "Gore Greaves Beta",
+        "Talisman": "Frost Charm III (Ice Attack)"
+      },
+      "skills": "Ice Attack 3, Weakness Exploit 5, Agitator 4, Thunder Res 3, Stun Res 3",
+      "tip": "Focus head wounds immediately after its railgun discharge for massive topples."
+    },
+    {
+      "title": "Gore Magala Fire & Antivirus Meta",
+      "weapon": "All Weapons",
+      "monster": "Gore Magala",
+      "type": "Elemental Counter",
+      "gear": {
+        "Weapon": "Nu Udra / Fire Artian Weapon",
+        "Helm": "Gore Helm Beta",
+        "Chest": "Udra Miremail Beta",
+        "Arms": "Gore Vambraces Beta",
+        "Waist": "Arkvulcan Coil Beta",
+        "Legs": "Gore Greaves Beta",
+        "Talisman": "Blaze Charm III (Fire Attack)"
+      },
+      "skills": "Fire Attack 3, Antivirus 3, Weakness Exploit 5, Coalescence 2, Evade Window 3",
+      "tip": "Slot Sane Jewels (Antivirus) to turn Gore's Frenzy virus into free affinity."
+    },
+    {
+      "title": "Immortal Arkveld Wound Sustain",
+      "weapon": "All Weapons",
+      "monster": "Arkveld",
+      "type": "Comfy / Survival",
+      "gear": {
+        "Weapon": "Arkveld Dragon Weapon",
+        "Helm": "Arkvulcan Helm Beta",
+        "Chest": "Arkvulcan Mail Beta",
+        "Arms": "G. Arkveld Vambraces Beta",
+        "Waist": "Arkvulcan Coil Beta",
+        "Legs": "G. Arkveld Greaves Beta",
+        "Talisman": "Defense Charm IV / Recovery Charm"
+      },
+      "skills": "Weakness Exploit 5, Partbreaker 3, Divine Blessing 3, Hasten Recovery II",
+      "tip": "Popping wounds heals huge chunks of HP automatically via Arkveld set bonus."
+    }
+  ]
+}
 
