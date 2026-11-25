@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MH Wilds Pro Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>MH Wilds Pro Builder</h1>
+    <div class="tabs">
+      <button class="tab active" data-tab="meta">Meta & Counter Builds</button>
+      <button class="tab" data-tab="ai">AI Build Advisor</button>
+    </div>
+  </header>
+
+  <section id="meta-view">
+    <div class="controls">
+      <select id="weapon-select"></select>
+      <select id="monster-select"></select>
+    </div>
+    <div id="builds-list"></div>
+  </section>
+
+  <section id="ai-view" class="hidden">
+    <div class="ai-box">
+      <label>1. Your Weapon</label>
+      <select id="ai-weapon"></select>
+      <label>2. Target Monster</label>
+      <select id="ai-monster"></select>
+      <label>3. Playstyle Priority</label>
+      <select id="ai-style">
+        <option value="meta">Max Meta DPS</option>
+        <option value="comfy">Comfy / Anti-Cart Survival</option>
+        <option value="partbreak">Partbreaker & Wound Focus</option>
+      </select>
+      <button id="ai-generate">Generate Custom Loadout</button>
+    </div>
+    <div id="ai-result"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
