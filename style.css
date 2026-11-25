@@ -1,85 +1,99 @@
+:root, [data-theme="gold"] {
+  --bg: #0f1115; --panel: #171a21; --card: #1d212b; --accent: #d4af37;
+  --accent-soft: #2c2614; --text: #f8fafc; --muted: #94a3b8; --border: #2c3342;
+}
+[data-theme="frenzy"] {
+  --bg: #100b18; --panel: #191226; --card: #221833; --accent: #c084fc;
+  --accent-soft: #2e1a47; --text: #faf5ff; --muted: #b79fd4; --border: #3b2659;
+}
+[data-theme="rey"] {
+  --bg: #09121c; --panel: #101d2c; --card: #16273b; --accent: #38bdf8;
+  --accent-soft: #122d42; --text: #f0f9ff; --muted: #8ab4d8; --border: #1e3a5f;
+}
+[data-theme="crimson"] {
+  --bg: #160b0b; --panel: #221111; --card: #2d1616; --accent: #f87171;
+  --accent-soft: #3f1818; --text: #fef2f2; --muted: #d19999; --border: #522020;
+}
+[data-theme="arkveld"] {
+  --bg: #111317; --panel: #1a1d24; --card: #232730; --accent: #e2e8f0;
+  --accent-soft: #2d333f; --text: #ffffff; --muted: #9ca3af; --border: #3f4756;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
-body { background: #0f1115; color: #f1f5f9; padding-bottom: 40px; }
+body { background: var(--bg); color: var(--text); padding-bottom: 40px; transition: 0.2s; }
 
 header {
-  background: #171a21;
-  padding: 16px;
-  border-bottom: 2px solid #d4af37;
+  background: var(--panel);
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--accent);
   position: sticky;
   top: 0;
   z-index: 10;
 }
-
-h1 { font-size: 1.3rem; color: #d4af37; margin-bottom: 10px; letter-spacing: 0.5px; }
+.top-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
+h1 { font-size: 1.2rem; color: var(--accent); letter-spacing: 0.4px; }
+#theme-select {
+  width: auto; padding: 6px 10px; font-size: 0.8rem;
+  background: var(--card); color: var(--accent); border: 1px solid var(--accent); border-radius: 6px;
+}
 
 .tabs { display: flex; gap: 8px; }
 .tab {
-  flex: 1;
-  background: #222630;
-  color: #cbd5e1;
-  border: 1px solid #333947;
-  padding: 8px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  cursor: pointer;
+  flex: 1; background: var(--card); color: var(--muted); border: 1px solid var(--border);
+  padding: 8px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer;
 }
-.tab.active { background: #d4af37; color: #0f1115; border-color: #d4af37; }
-
+.tab.active { background: var(--accent); color: #0b0d10; border-color: var(--accent); }
 .hidden { display: none; }
 
 .controls, .ai-box {
-  padding: 14px;
-  display: grid;
-  gap: 10px;
-  background: #151820;
-  border-bottom: 1px solid #262b36;
+  padding: 14px; display: grid; gap: 8px;
+  background: var(--panel); border-bottom: 1px solid var(--border);
 }
-
+label { font-size: 0.78rem; color: var(--accent); font-weight: 700; text-transform: uppercase; }
 select, button#ai-generate {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #333947;
-  background: #1e222d;
-  color: #fff;
-  font-size: 0.95rem;
+  width: 100%; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text); font-size: 0.95rem;
 }
-
-label { font-size: 0.8rem; color: #d4af37; font-weight: 700; }
 button#ai-generate {
-  background: linear-gradient(135deg, #d4af37, #b5891d);
-  color: #0f1115;
-  font-weight: 800;
-  border: none;
-  margin-top: 4px;
-  cursor: pointer;
+  background: var(--accent); color: #0b0d10; font-weight: 800; border: none; margin-top: 6px; cursor: pointer;
 }
+#monster-banner {
+  margin: 14px 14px 0; padding: 12px; border-radius: 8px;
+  background: var(--accent-soft); border: 1px solid var(--accent); font-size: 0.84rem;
+}
+#monster-banner strong { color: var(--accent); }
 
 #builds-list, #ai-result { padding: 14px; display: grid; gap: 14px; }
 
 .card {
-  background: #171a21;
-  border: 1px solid #2a303d;
-  border-left: 4px solid #d4af37;
-  border-radius: 10px;
-  padding: 14px;
+  background: var(--panel); border: 1px solid var(--border);
+  border-left: 4px solid var(--accent); border-radius: 10px; padding: 14px;
 }
-.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.card h2 { font-size: 1.05rem; color: #f8fafc; }
-.badge { background: #2c2614; color: #d4af37; font-size: 0.72rem; padding: 3px 8px; border-radius: 5px; font-weight: 700; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
+.card h2 { font-size: 1.02rem; color: var(--text); }
+.badge {
+  background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent);
+  font-size: 0.7rem; padding: 3px 8px; border-radius: 5px; font-weight: 700; white-space: nowrap;
+}
 
-.gear-grid { display: grid; gap: 6px; margin-top: 8px; font-size: 0.86rem; }
+.gear-grid { display: grid; gap: 6px; font-size: 0.85rem; }
 .gear-row {
-  display: flex;
-  justify-content: space-between;
-  background: #1e222d;
-  padding: 6px 10px;
-  border-radius: 6px;
+  display: flex; justify-content: space-between; gap: 10px;
+  background: var(--card); padding: 7px 10px; border-radius: 6px;
 }
-.slot { color: #94a3b8; font-weight: 600; }
-.piece { color: #f8fafc; font-weight: 700; text-align: right; }
-.talisman-row { border: 1px solid #d4af3755; background: #221f17; }
-.skills-box { margin-top: 10px; font-size: 0.82rem; color: #38bdf8; line-height: 1.4; }
-.tip-box { margin-top: 8px; font-size: 0.8rem; color: #a7f3d0; background: #13251e; padding: 8px; border-radius: 6px; }
+.slot { color: var(--muted); font-weight: 600; }
+.piece { color: var(--text); font-weight: 700; text-align: right; }
+.talisman-row { border: 1px solid var(--accent); background: var(--accent-soft); }
 
+.jewels-section {
+  margin-top: 10px; padding: 10px; border-radius: 8px;
+  background: var(--card); border: 1px dashed var(--border); display: grid; gap: 6px;
+}
+.jewel-title { font-size: 0.76rem; font-weight: 800; color: var(--accent); text-transform: uppercase; }
+.jewel-list { font-size: 0.83rem; color: #e2e8f0; line-height: 1.45; }
+
+.skills-box { margin-top: 10px; font-size: 0.82rem; color: #38bdf8; line-height: 1.4; }
+.tip-box {
+  margin-top: 8px; font-size: 0.8rem; color: #a7f3d0;
+  background: rgba(16, 185, 129, 0.12); padding: 8px 10px; border-radius: 6px;
+}
