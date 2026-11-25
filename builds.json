@@ -1,19 +1,61 @@
 {
   "weapons": [
-    "Great Sword", "Long Sword", "Sword & Shield", "Dual Blades",
-    "Hammer", "Hunting Horn", "Lance", "Gunlance",
-    "Switch Axe", "Charge Blade", "Insect Glaive", "Light Bowgun",
-    "Heavy Bowgun", "Bow"
+    "Great Sword",
+    "Long Sword",
+    "Sword & Shield",
+    "Dual Blades",
+    "Hammer",
+    "Hunting Horn",
+    "Lance",
+    "Gunlance",
+    "Switch Axe",
+    "Charge Blade",
+    "Insect Glaive",
+    "Light Bowgun",
+    "Heavy Bowgun",
+    "Bow"
   ],
   "monsters": [
-    { "name": "All Monsters (General Meta)", "weakness": "Dragon / Blast", "resist": "None" },
-    { "name": "Arkveld", "weakness": "Dragon", "resist": "Dragonblight / Physical" },
-    { "name": "Gore Magala", "weakness": "Fire / Dragon", "resist": "Frenzy Virus" },
-    { "name": "Rey Dau", "weakness": "Ice", "resist": "Thunder / Stun" },
-    { "name": "Jin Dahaad", "weakness": "Fire", "resist": "Ice / Frostblight" },
-    { "name": "Nu Udra", "weakness": "Water", "resist": "Fire / Blast" },
-    { "name": "Uth Duna", "weakness": "Thunder", "resist": "Water" },
-    { "name": "Rathalos", "weakness": "Dragon / Thunder", "resist": "Fire / Poison" }
+    {
+      "name": "All Monsters (General Meta)",
+      "weakness": "Dragon / Blast",
+      "resist": "None"
+    },
+    {
+      "name": "Arkveld",
+      "weakness": "Dragon",
+      "resist": "Dragonblight / Physical"
+    },
+    {
+      "name": "Gore Magala",
+      "weakness": "Fire / Dragon",
+      "resist": "Frenzy Virus"
+    },
+    {
+      "name": "Rey Dau",
+      "weakness": "Ice",
+      "resist": "Thunder / Stun"
+    },
+    {
+      "name": "Jin Dahaad",
+      "weakness": "Fire",
+      "resist": "Ice / Frostblight"
+    },
+    {
+      "name": "Nu Udra",
+      "weakness": "Water",
+      "resist": "Fire / Blast"
+    },
+    {
+      "name": "Uth Duna",
+      "weakness": "Thunder",
+      "resist": "Water"
+    },
+    {
+      "name": "Rathalos",
+      "weakness": "Dragon / Thunder",
+      "resist": "Fire / Poison"
+    }
   ],
   "builds": [
     {
@@ -84,6 +126,6 @@
       "skills": "Weakness Exploit 5, Partbreaker 3, Divine Blessing 3, Hasten Recovery II",
       "tip": "Popping wounds heals huge chunks of HP automatically via Arkveld set bonus."
     }
-  ]
+  ],
+  "lastSynced": "11/25/2026, 11:40:45 AM EST"
 }
-
