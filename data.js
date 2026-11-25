@@ -17,8 +17,15 @@ const MH_DATA = {
   },
   monsters: [
     { name: "All Monsters (General Meta)", weak: "Dragon / Blast", hazard: "None", counterJewel: "Mighty Jewel II / Challenger Jewel III" },
+    { name: "Arch-Tempered Arkveld (10★)", weak: "Dragon", hazard: "One-Shot Chain Explosions / Dragonblight", counterJewel: "Dragon Res Jewel I x3, Protection Jewel I x3" },
+    { name: "Arch-Tempered Jin Dahaad (10★)", weak: "Fire", hazard: "Lethal Frost Nova / Frostblight", counterJewel: "Bind Res Jewel I x3, Ice Res Jewel I x3" },
+    { name: "Arch-Tempered Nu Udra (10★)", weak: "Water", hazard: "Extreme Hellfire / Oil Ignition", counterJewel: "Fire Res Jewel I x3, Stream Jewel III" },
+    { name: "Arch-Tempered Uth Duna (10★)", weak: "Thunder", hazard: "Mega Tidal Slams / Waterblight", counterJewel: "Water Res Jewel I x3, Bolt Jewel III" },
+    { name: "Arch-Tempered Rey Dau (10★)", weak: "Ice", hazard: "Hyper Railgun / Thunderblight Stun", counterJewel: "Steadfast Jewel I x3, Thunder Res Jewel I x3" },
     { name: "Arkveld", weak: "Dragon", hazard: "Dragonblight / Chain Slams", counterJewel: "Dragon Res Jewel I x3, Destroyer Jewel II" },
     { name: "Guardian Arkveld", weak: "Dragon", hazard: "Wylk Explosions / Dragonblight", counterJewel: "Dragon Res Jewel I x3, Protection Jewel I" },
+    { name: "Gogmazios", weak: "Dragon / Fire", hazard: "Heavy Tar / Massive Fire Beams", counterJewel: "Mirewalker Jewel I, Fire Res Jewel I x3" },
+    { name: "Omega Planetes", weak: "Thunder / Dragon", hazard: "Starboard/Larboard Lasers / Mustard Bomb", counterJewel: "Evade Extender II, Fire Res Jewel I x3" },
     { name: "Gore Magala", weak: "Fire / Dragon", hazard: "Frenzy Virus", counterJewel: "Sane Jewel I x3 (Antivirus), Blaze Jewel III" },
     { name: "Zoh Shia", weak: "Dragon / Ice", hazard: "Wylk Nova / Fire & Thunder", counterJewel: "Protection Jewel I x3, Dragon Jewel III" },
     { name: "Jin Dahaad", weak: "Fire", hazard: "Frostblight / Ice Nova", counterJewel: "Bind Res Jewel I x3, Ice Res Jewel I x3" },
@@ -28,32 +35,52 @@ const MH_DATA = {
     { name: "Mizutsune", weak: "Thunder / Dragon", hazard: "Bubbleblight / Water", counterJewel: "Blight Res Jewel III, Bolt Jewel III" },
     { name: "Lagiacrus", weak: "Fire / Ice", hazard: "Thunderblight / AoE Shock", counterJewel: "Thunder Res Jewel I x3, Blaze Jewel III" },
     { name: "Seregios", weak: "Thunder / Ice", hazard: "Bleeding Status", counterJewel: "Suture Jewel I x3 (Bleed Res), Bolt Jewel III" },
-    { name: "Rathalos / Guardian Rathalos", weak: "Dragon / Thunder", hazard: "Fireblight / Poison", counterJewel: "Antidote Jewel I x3, Dragon Jewel III" },
+    { name: "Rathalos", weak: "Dragon / Thunder", hazard: "Fireblight / Poison", counterJewel: "Antidote Jewel I x3, Dragon Jewel III" },
+    { name: "Guardian Rathalos", weak: "Dragon / Thunder", hazard: "Wylk Fireballs / Poison", counterJewel: "Fire Res Jewel I x3, Dragon Jewel III" },
     { name: "Rathian", weak: "Dragon / Thunder", hazard: "Deadly Poison / Fire", counterJewel: "Antidote Jewel I x3, Bolt Jewel III" },
     { name: "Gravios", weak: "Water / Dragon", hazard: "Fireblight / Sleep Gas", counterJewel: "Pep Jewel I x3 (Sleep Res), Stream Jewel III" },
     { name: "Blangonga", weak: "Fire / Thunder", hazard: "Frostblight / Tremors", counterJewel: "Bind Res Jewel I x3, Blaze Jewel III" },
     { name: "Nerscylla", weak: "Fire / Thunder", hazard: "Webbed / Sleep / Poison", counterJewel: "Bind Res Jewel I x3, Antidote Jewel I" },
     { name: "Gypceros", weak: "Fire / Ice", hazard: "Flash Stun / Poison", counterJewel: "Steadfast Jewel I x3, Antidote Jewel I x3" },
+    { name: "Yian Kut-Ku", weak: "Water / Ice", hazard: "Fireblight / Charge", counterJewel: "Fire Res Jewel I x2, Stream Jewel III" },
     { name: "Xu Wu", weak: "Ice", hazard: "Pin Grab / Assassin Strikes", counterJewel: "Evade Window Jewel II, Frost Jewel III" },
     { name: "Guardian Ebony Odogaron", weak: "Water", hazard: "Dragonblight / Bleeding", counterJewel: "Suture Jewel I x3, Stream Jewel III" },
     { name: "Guardian Fulgur Anjanath", weak: "Ice / Water", hazard: "Thunderblight / Roars", counterJewel: "Thunder Res Jewel I x3, Frost Jewel III" },
     { name: "Guardian Doshaguma", weak: "Fire / Thunder", hazard: "Defense Down / Heavy Slams", counterJewel: "Iron Skin Jewel I x3, Protection Jewel I" },
+    { name: "Doshaguma", weak: "Fire / Thunder", hazard: "Heavy Slams / Roars", counterJewel: "Earplugs Jewel II, Blaze Jewel III" },
     { name: "Ajarakan", weak: "Water / Ice", hazard: "Blastblight / Fire", counterJewel: "Antiblast Jewel I x3, Stream Jewel III" },
     { name: "Rompopolo", weak: "Water", hazard: "Poison Gas / Blast Puddles", counterJewel: "Antidote Jewel I x3, Stream Jewel III" },
     { name: "Hirabami", weak: "Fire / Thunder", hazard: "Frostblight / Aerial Hover", counterJewel: "Flash Pods + Blaze Jewel III" },
     { name: "Lala Barina", weak: "Fire", hazard: "Paralysis Florets", counterJewel: "Antipara Jewel I x3, Blaze Jewel III" },
     { name: "Balahara", weak: "Thunder", hazard: "Waterblight / Quicksand", counterJewel: "Mirewalker Jewel I, Bolt Jewel III" },
-    { name: "Congalala", weak: "Fire / Ice", hazard: "Stench / Paralysis / Poison", counterJewel: "Deodorant / Antidote Jewel I" },
+    { name: "Congalala", weak: "Fire / Ice", hazard: "Stench / Paralysis / Poison", counterJewel: "Antidote Jewel I x3, Blaze Jewel III" },
     { name: "Quematrice", weak: "Water", hazard: "Fireblight / Tail Sweeps", counterJewel: "Fire Res Jewel I x3, Stream Jewel III" },
-    { name: "Doshaguma / Chatacabra", weak: "Fire / Thunder", hazard: "Physical / Tremors", counterJewel: "Protection Jewel I x3, Mighty Jewel II" }
+    { name: "Chatacabra", weak: "Thunder / Ice", hazard: "Tongue Slams / Rock Arms", counterJewel: "Destroyer Jewel II, Bolt Jewel III" }
   ],
   builds: [
     {
-      title: "Endgame Gore-Arkveld Meta DPS",
-      category: "Meta DPS",
+      title: "Arch-Tempered Gamma (γ) Lord's Soul Meta",
+      category: "10★ Endgame Meta",
       monster: "All Monsters (General Meta)",
       gear: {
         Weapon: "Artian Tier 8 (3x Attack / Affinity Infusion)",
+        Helm: "Rey Sandhelm Gamma (γ)",
+        Chest: "Arkvulcan Mail Gamma (γ)",
+        Arms: "Rey Sandbraces Gamma (γ)",
+        Waist: "Gore Coil Beta",
+        Legs: "Gore Greaves Beta",
+        Talisman: "Challenger Charm III / Power Charm III"
+      },
+      armorJewels: "Tenderizer Jewel III x2, Challenger Jewel III x2, Mighty Jewel II x3, Sane Jewel I x2",
+      skills: "Lord's Soul (+5% Raw + Guts Save), Agitator 5, Weakness Exploit 5, Antivirus 3, Max Might 3",
+      tip: "3-piece Gamma (γ) activates Lord's Soul for +5% raw attack AND saves you from a one-shot above 50% HP."
+    },
+    {
+      title: "Endgame Gore-Arkveld Frenzy Meta",
+      category: "Meta DPS",
+      monster: "All Monsters (General Meta)",
+      gear: {
+        Weapon: "Artian Tier 8 (Affinity / Element Roll)",
         Helm: "Gore Helm Beta",
         Chest: "Arkvulcan Mail Beta",
         Arms: "Gore Vambraces Beta",
@@ -66,55 +93,38 @@ const MH_DATA = {
       tip: "Clear Frenzy within seconds to activate +15% Affinity from Black Eclipse + Antivirus 3."
     },
     {
-      title: "Rey Dau & Lagiacrus Ice/Fire Counter",
-      category: "Elemental Counter",
-      monster: "Rey Dau",
+      title: "10★ Arch-Tempered Anti-One-Shot Tank",
+      category: "Arch-Tempered Counter",
+      monster: "Arch-Tempered",
       gear: {
-        Weapon: "Jin Dahaad / Artian Element Tree",
-        Helm: "Dahaad Shardhelm Beta",
-        Chest: "Arkvulcan Mail Beta",
-        Arms: "Dahaad Shardbraces Beta",
-        Waist: "Rey Sandcoil Beta",
-        Legs: "Gore Greaves Beta",
-        Talisman: "Frost Charm III / Blaze Charm III"
+        Weapon: "Arkveld / Element Counter Tree",
+        Helm: "Arkvulcan Helm Gamma (γ)",
+        Chest: "Arkvulcan Mail Gamma (γ)",
+        Arms: "Dahaad Shardbraces Gamma (γ)",
+        Waist: "Uth Duna Coil Gamma (γ)",
+        Legs: "G. Arkveld Greaves Beta",
+        Talisman: "Defense Charm V / Blessing Charm III"
       },
-      armorJewels: "Tenderizer Jewel III x2, Challenger Jewel III x2, Steadfast Jewel I x3, Thunder Res Jewel I x3, Sane Jewel I x1",
-      skills: "Element Attack 3, Weakness Exploit 5, Agitator 5, Stun Resistance 3, Thunder Res 3",
-      tip: "Stun Resistance 3 completely negates Rey Dau's railgun follow-up combo."
+      armorJewels: "Protection Jewel I x3, Medicine Jewel I x3, Tenderizer Jewel III x2, Destroyer Jewel II x2",
+      skills: "Lord's Soul (Guts), Hasten Recovery II, Divine Blessing 3, Recovery Up 3, Weakness Exploit 5",
+      tip: "Combines Gamma Lord's Soul Guts save with Arkveld wound healing so 10★ Arch-Tempered combos cannot cart you."
     },
     {
-      title: "Gore Magala & Zoh Shia Frenzy-Blight Killer",
-      category: "Elemental Counter",
-      monster: "Gore Magala",
+      title: "Gogmazios & Zoh Shia Heavy Siege Counter",
+      category: "Elder / Siege Counter",
+      monster: "Gogmazios",
       gear: {
-        Weapon: "Nu Udra / Arkveld Element Tree",
+        Weapon: "Arkveld Dragon Tree (Max Dragon / Elderseal)",
         Helm: "Gore Helm Beta",
-        Chest: "Udra Miremail Beta",
+        Chest: "Arkvulcan Mail Gamma (γ)",
         Arms: "Gore Vambraces Beta",
         Waist: "Arkvulcan Coil Beta",
         Legs: "Gore Greaves Beta",
-        Talisman: "Blaze Charm III / Dragon Charm III"
+        Talisman: "Dragon Charm III (Dragon Attack)"
       },
-      armorJewels: "Sane Jewel I x3, Phoenix Jewel II x2 (Coalescence), Tenderizer Jewel III x2, Jumping Jewel II x2",
-      skills: "Antivirus 3, Coalescence 3, Weakness Exploit 5, Fire/Dragon Attack 3, Evade Extender 2",
-      tip: "Overcoming Frenzy triggers Coalescence 3 + Antivirus 3 simultaneously for massive elemental bursts."
-    },
-    {
-      title: "Immortal Arkveld Wound-Heal Tank",
-      category: "Comfy / Anti-Cart",
-      monster: "Arkveld",
-      gear: {
-        Weapon: "Arkveld Dragon Tree (High Dragon / Elderseal)",
-        Helm: "Arkvulcan Helm Beta",
-        Chest: "Arkvulcan Mail Beta",
-        Arms: "G. Arkveld Vambraces Beta",
-        Waist: "Arkvulcan Coil Beta",
-        Legs: "G. Arkveld Greaves Beta",
-        Talisman: "Blessing Charm III (Divine Blessing)"
-      },
-      armorJewels: "Protection Jewel I x3, Medicine Jewel I x3 (Recovery Up), Destroyer Jewel II x2, Tenderizer Jewel III x2",
-      skills: "Hasten Recovery II, Decimator II, Weakness Exploit 5, Divine Blessing 3, Recovery Up 3, Partbreaker 3",
-      tip: "Every Focus Strike on a wound heals ~35% of your health bar automatically."
+      armorJewels: "Dragon Jewel III x1, Tenderizer Jewel III x2, Fire Res Jewel I x3, Sane Jewel I x2, Jumping Jewel II x2",
+      skills: "Dragon Attack 3, Weakness Exploit 5, Agitator 5, Antivirus 3, Fire Res 3, Evade Extender 2",
+      tip: "Use Evade Extender 2 to clear Gogmazios and Zoh Shia massive arena-wide fire/wylk blasts."
     }
   ]
 };
