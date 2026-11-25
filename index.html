@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MH Wilds Pro Builder</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
   <header>
@@ -23,18 +23,18 @@
     </div>
     <div class="tabs">
       <button type="button" class="tab active" data-tab="meta">Meta Builds</button>
-      <button type="button" class="tab" data-tab="ai">Monster AI</button>
-      <button type="button" class="tab" data-tab="weapon-ai">Weapon AI</button>
+      <button type="button" class="tab" data-tab="ai">TU4 Custom Builder</button>
+      <button type="button" class="tab" data-tab="weapon-ai">Weapon Search AI</button>
     </div>
   </header>
 
   <section id="meta-view">
     <div class="controls">
-      <label>Primary Weapon Class</label>
+      <label for="weapon-select">Primary Weapon Class</label>
       <select id="weapon-select"></select>
-      <label>Weapon Sub-Type / Shelling / Phial / Ammo</label>
+      <label for="subtype-select">Weapon Sub-Type / Shelling / Phial / Ammo</label>
       <select id="subtype-select"></select>
-      <label>Target Monster (All Monsters + 10★ Arch-Tempered)</label>
+      <label for="monster-select">Target Monster (All Monsters + 10★ Arch-Tempered)</label>
       <select id="monster-select"></select>
     </div>
     <div id="monster-banner"></div>
@@ -43,34 +43,82 @@
 
   <section id="ai-view" class="hidden">
     <div class="ai-box">
-      <label>1. Primary Weapon Class</label>
-      <select id="ai-weapon"></select>
-      <label>2. Sub-Type & Artian / Gogmazios (TU4) Reinforcement</label>
-      <select id="ai-reinforce">
-        <option value="artian-atk">Artian Tier 8 (3x Attack Infusion • [3-3-3] Slots)</option>
-        <option value="artian-aff">Artian Tier 8 (2x Affinity + 1x Sharpness • Prevents Overcap)</option>
-        <option value="gog-tu4">Gogmazios TU4 Tree (High Element/Raw + Group Skill Roll)</option>
-        <option value="monster">Standard Apex / Monster Tree</option>
-      </select>
-      <label>3. Target Monster</label>
-      <select id="ai-monster"></select>
-      <label>4. Custom Timeworn / RNG Charm (Optional)</label>
-      <input type="text" id="ai-charm" placeholder="e.g., Attack 3 + WEX 1 [3-1-0] or leave blank for best craftable">
-      <label>5. Hunting Strategy</label>
-      <select id="ai-style">
-        <option value="meta">10★ Max Meta DPS (3pc Gamma Lord's Soul + 2pc Set Bonus)</option>
-        <option value="counter">Elemental & Blight Counter</option>
-        <option value="comfy">Immortal Anti-Cart (Arkveld's Hunger + Lord's Soul)</option>
-        <option value="partbreak">Wound & Partbreaker Farm (Carver Pro)</option>
-      </select>
-      <button type="button" id="ai-generate">Generate Full Endgame Loadout</button>
+      <div class="step-group"><label for="ai-weapon">1. Primary Weapon Class & Sub-Type</label>
+        <select id="ai-weapon"></select><select id="ai-subtype"></select></div>
+
+      <div class="step-group"><label for="ai-element">2. Weapon Element / Status</label>
+        <select id="ai-element">
+          <option value="Auto">Auto-Match Target Monster Weakness</option>
+          <option value="Fire">Fire</option><option value="Water">Water</option>
+          <option value="Thunder">Thunder</option><option value="Ice">Ice</option>
+          <option value="Dragon">Dragon</option><option value="Blast">Blast</option>
+          <option value="Paralysis">Paralysis</option><option value="Poison">Poison</option>
+          <option value="Sleep">Sleep</option><option value="Raw">Raw / Non-Elemental</option>
+        </select></div>
+
+      <div class="step-group"><label for="ai-focus">3. Gogma Artian Focus Path & 5-Slot EX Reinforcements</label>
+        <select id="ai-focus">
+          <option value="atk">Gogma Attack Focus (2x Attack EX, 2x Element EX, 1x Sharpness EX)</option>
+          <option value="aff">Gogma Affinity Focus (2x Affinity EX, 2x Attack EX, 1x Sharpness EX)</option>
+          <option value="elem">Gogma Element Focus (2x Element EX, 2x Affinity EX, 1x Sharpness EX)</option>
+          <option value="r8">Base Rarity 8 Artian (5x Level 5 Reinforcements, Pre-Tarred)</option>
+        </select></div>
+
+      <div class="step-group"><label>4. Gogma Weapon Rolled Skills (1 Set Bonus + 1 Group Skill)</label>
+        <select id="ai-w-set">
+          <option value="Gore Magala's Tyranny">Weapon Set Roll: Gore Magala's Tyranny</option>
+          <option value="Gogmapocalypse">Weapon Set Roll: Gogmapocalypse</option>
+          <option value="Rey Dau's Voltage">Weapon Set Roll: Rey Dau's Voltage</option>
+          <option value="Arkveld's Hunger">Weapon Set Roll: Arkveld's Hunger</option>
+        </select>
+        <select id="ai-w-group">
+          <option value="Lord's Soul">Weapon Group Roll: Lord's Soul (Enables 2pc Gamma Stacking!)</option>
+          <option value="Fortifying Pelt">Weapon Group Roll: Fortifying Pelt</option>
+          <option value="Scaling Prowess">Weapon Group Roll: Scaling Prowess</option>
+        </select></div>
+
+      <div class="step-group"><label>5. Custom Timeworn RNG Charm (Skills & Slots)</label>
+        <input type="text" id="ai-charm-skill" placeholder="Rolled Skills (e.g., Attack Boost 3 + Agitator 1)">
+        <select id="ai-charm-slots">
+          <option value="[3-1-0]">Charm Slots: [3-1-0] (Rarity 8 God Roll)</option>
+          <option value="[2-2-0]">Charm Slots: [2-2-0]</option>
+          <option value="[3-0-0]">Charm Slots: [3-0-0]</option>
+          <option value="Craftable">No RNG Charm (Use Best Craftable Charm)</option>
+        </select></div>
+
+      <div class="step-group"><label for="ai-monster">6. Target Monster & TU4 Armor Transcendence</label>
+        <select id="ai-monster"></select>
+        <label class="check-row"><input type="checkbox" id="ai-transcend" checked> Enable TU4 Armor Transcendence (Limit-Broken Rarity 5–7 Slots & Defense)</label></div>
+
+      <div class="step-group"><label for="ai-comfort">7. Comfort Priority & Decoration Inventory</label>
+        <select id="ai-comfort">
+          <option value="mt">Sharpness: Master's Touch (High Crit Sharpness Lock)</option>
+          <option value="rs">Sharpness: Razor Sharp 3 / Protective Polish</option>
+          <option value="earplugs">Comfort: Earplugs 3 + Stun Resistance 3</option>
+          <option value="evade">Comfort: Evade Window 5 + Evade Extender 2</option>
+          <option value="guard">Shield: Guard 3 + Guard Up 3</option>
+        </select>
+        <select id="ai-jewel-cap">
+          <option value="full">Jewels: Endgame Complete (All Lv3 Hybrid Jewels)</option>
+          <option value="budget">Jewels: Standard / Budget (No Rare Lv3 Hybrid Jewels)</option>
+        </select></div>
+
+      <div class="step-group"><label for="ai-style">8. Hunting Strategy</label>
+        <select id="ai-style">
+          <option value="meta">10★ Max Meta DPS (Multi-Set Bonus Stack)</option>
+          <option value="counter">Elemental & Blight Counter</option>
+          <option value="comfy">Immortal Anti-Cart Sustain</option>
+          <option value="partbreak">Wound & Partbreaker Farm (Carver Pro)</option>
+        </select></div>
+
+      <button type="button" id="ai-generate">Generate TU4 Endgame Loadout</button>
     </div>
     <div id="ai-result"></div>
   </section>
 
   <section id="weapon-ai-view" class="hidden"></section>
 
-  <script src="app.js?v=10"></script>
-  <script src="weapons-ai.js?v=6"></script>
+  <script src="app.js?v=11"></script>
+  <script src="weapons-ai.js?v=7"></script>
 </body>
 </html>
