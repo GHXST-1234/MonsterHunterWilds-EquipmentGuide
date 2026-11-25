@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MH Wilds Ultimate Equipment Guide</title>
+  <title>MH Wilds Ultimate Builder</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="top-bar">
       <h1>MH Wilds Pro Builder</h1>
-      <select id="theme-select" aria-label="Theme">
+      <select id="theme-select">
         <option value="gold">Forbidden Gold</option>
         <option value="frenzy">Gore Frenzy</option>
         <option value="rey">Rey Lightning</option>
@@ -19,8 +19,8 @@
       </select>
     </div>
     <div class="tabs">
-      <button class="tab active" data-tab="meta">Meta & Counter Builds</button>
-      <button class="tab" data-tab="ai">AI Build Advisor</button>
+      <button type="button" class="tab active" data-tab="meta">Meta & Counter Builds</button>
+      <button type="button" class="tab" data-tab="ai">AI Build Advisor</button>
     </div>
   </header>
 
@@ -28,7 +28,7 @@
     <div class="controls">
       <label>Weapon Class</label>
       <select id="weapon-select"></select>
-      <label>Target Monster</label>
+      <label>Target Monster (All Monsters + Arch-Tempered)</label>
       <select id="monster-select"></select>
     </div>
     <div id="monster-banner"></div>
@@ -43,17 +43,16 @@
       <select id="ai-monster"></select>
       <label>3. Hunting Strategy</label>
       <select id="ai-style">
-        <option value="meta">Max Meta DPS (Highest Damage)</option>
+        <option value="meta">10★ Max Meta DPS (Gamma Lord's Soul)</option>
         <option value="counter">Elemental & Blight Counter</option>
-        <option value="comfy">Immortal / Anti-Cart Survival</option>
+        <option value="comfy">Immortal / Anti-Cart Tank</option>
         <option value="partbreak">Wound & Partbreaker Farm</option>
       </select>
-      <button id="ai-generate">Generate Full Gear & Jewel Loadout</button>
+      <button type="button" id="ai-generate">Generate Full Gear & Jewel Loadout</button>
     </div>
     <div id="ai-result"></div>
   </section>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
