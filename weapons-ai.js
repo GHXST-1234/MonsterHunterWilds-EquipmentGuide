@@ -118,7 +118,7 @@ const NAMED_WEAPONS = [
 
   document.getElementById('w-ai-build-btn').addEventListener('click', () => {
     const goal = document.getElementById('w-ai-goal').value;
-    const elem = chosenWeapon.elem.split('/').shift().trim();
+   const elem = chosenWeapon.elem.split('/').shift().trim();
     const charms = { Fire: "Blaze Charm III", Water: "Stream Charm III", Thunder: "Bolt Charm III", Ice: "Frost Charm III", Dragon: "Dragon Charm III" };
     const wInfo = WEAPONS[chosenWeapon.cls];
 
