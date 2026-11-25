@@ -58,7 +58,7 @@ const MONSTERS = [
   { n: "Chatacabra", w: "Thunder / Ice", h: "Tongue Slams / Rock Arms", c: "Destroyer Jewel II, Bolt Jewel III" }
 ];
 function makeLoadout(wName, mObj, style) {
-  const elem = mObj.w.split('/').trim();
+  const elem = mObj.w.split('/').shift().trim();
   const charms = { Fire: "Blaze Charm III", Water: "Stream Charm III", Thunder: "Bolt Charm III", Ice: "Frost Charm III", Dragon: "Dragon Charm III" };
   const presets = {
     meta: {
@@ -114,7 +114,7 @@ function renderCard(b, wName) {
 function updateMain() {
   const wName = document.getElementById('weapon-select').value;
   const mName = document.getElementById('monster-select').value;
-  const mObj = MONSTERS.find(m => m.n === mName) || MONSTERS;
+  const mObj = MONSTERS.find(m => m.n === mName) || MONSTERS.at(0);
   document.getElementById('monster-banner').innerHTML = `<strong>Target: ${mObj.n}</strong><br>Weakness: <strong>${mObj.w}</strong> | Hazard: ${mObj.h}<br>Counter Jewels: <strong>${mObj.c}</strong>`;
   const list = ['meta', 'counter', 'comfy'].map(st => renderCard(makeLoadout(wName, mObj, st), wName)).join('');
   document.getElementById('builds-list').innerHTML = list;
@@ -135,7 +135,7 @@ document.getElementById('weapon-select').addEventListener('change', updateMain);
 document.getElementById('monster-select').addEventListener('change', updateMain);
 document.getElementById('ai-generate').addEventListener('click', () => {
   const wName = document.getElementById('ai-weapon').value;
-  const mObj = MONSTERS.find(m => m.n === document.getElementById('ai-monster').value) || MONSTERS;
+  const mObj = MONSTERS.find(m => m.n === document.getElementById('ai-monster').value) || MONSTERS.at(0);
   const style = document.getElementById('ai-style').value;
   document.getElementById('ai-result').innerHTML = renderCard(makeLoadout(wName, mObj, style), wName);
 });
