@@ -1,1 +1,85 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
+body { background: #0f1115; color: #f1f5f9; padding-bottom: 40px; }
+
+header {
+  background: #171a21;
+  padding: 16px;
+  border-bottom: 2px solid #d4af37;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+h1 { font-size: 1.3rem; color: #d4af37; margin-bottom: 10px; letter-spacing: 0.5px; }
+
+.tabs { display: flex; gap: 8px; }
+.tab {
+  flex: 1;
+  background: #222630;
+  color: #cbd5e1;
+  border: 1px solid #333947;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.tab.active { background: #d4af37; color: #0f1115; border-color: #d4af37; }
+
+.hidden { display: none; }
+
+.controls, .ai-box {
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+  background: #151820;
+  border-bottom: 1px solid #262b36;
+}
+
+select, button#ai-generate {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #333947;
+  background: #1e222d;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+label { font-size: 0.8rem; color: #d4af37; font-weight: 700; }
+button#ai-generate {
+  background: linear-gradient(135deg, #d4af37, #b5891d);
+  color: #0f1115;
+  font-weight: 800;
+  border: none;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+#builds-list, #ai-result { padding: 14px; display: grid; gap: 14px; }
+
+.card {
+  background: #171a21;
+  border: 1px solid #2a303d;
+  border-left: 4px solid #d4af37;
+  border-radius: 10px;
+  padding: 14px;
+}
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.card h2 { font-size: 1.05rem; color: #f8fafc; }
+.badge { background: #2c2614; color: #d4af37; font-size: 0.72rem; padding: 3px 8px; border-radius: 5px; font-weight: 700; }
+
+.gear-grid { display: grid; gap: 6px; margin-top: 8px; font-size: 0.86rem; }
+.gear-row {
+  display: flex;
+  justify-content: space-between;
+  background: #1e222d;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.slot { color: #94a3b8; font-weight: 600; }
+.piece { color: #f8fafc; font-weight: 700; text-align: right; }
+.talisman-row { border: 1px solid #d4af3755; background: #221f17; }
+.skills-box { margin-top: 10px; font-size: 0.82rem; color: #38bdf8; line-height: 1.4; }
+.tip-box { margin-top: 8px; font-size: 0.8rem; color: #a7f3d0; background: #13251e; padding: 8px; border-radius: 6px; }
 
