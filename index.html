@@ -54,11 +54,14 @@
     <div id="ai-result"></div>
   </section>
 
-  <section id="weapon-ai-view" class="hidden">
-    <p style="padding:16px;color:#d4af37;">Loading Weapon AI...</p>
-  </section>
+  <section id="weapon-ai-view" class="hidden"></section>
 
-  <script src="app.js?v=8"></script>
-  <script src="weapons-ai.js?v=4"></script>
+  <script src="app.js?v=9"></script>
+  <script src="weapons-ai.js?v=5"></script>
+  <script>
+    document.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => {
+      document.getElementById('weapon-ai-view').classList.toggle('hidden', btn.dataset.tab !== 'weapon-ai');
+    }));
+  </script>
 </body>
 </html>
