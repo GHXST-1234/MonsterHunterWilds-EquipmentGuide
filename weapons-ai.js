@@ -5,6 +5,7 @@ const NAMED_WEAPONS = [
   { name: "Schattenstolz (Gore Magala GS)", cls: "Great Sword", elem: "Dragon", bonus: "20% Base Affinity" },
   { name: "Abaddonian Krake (Nu Udra GS)", cls: "Great Sword", elem: "Fire", bonus: "High Fire Element" },
   { name: "Precipice Metallum (Jin Dahaad GS)", cls: "Great Sword", elem: "Ice", bonus: "High Ice + Guard" },
+  { name: "Zoh Shia Great Sword (Apex Dragon GS)", cls: "Great Sword", elem: "Dragon", bonus: "Whiteflame Torrent" },
   // Long Swords
   { name: "Dimensius (Artian Tier 8 LS)", cls: "Long Sword", elem: "Dragon / Blast", bonus: "3x Attack Infusion" },
   { name: "Lawful Lawgiver (Arkveld LS)", cls: "Long Sword", elem: "Dragon", bonus: "Elderseal + White Sharpness" },
@@ -16,6 +17,7 @@ const NAMED_WEAPONS = [
   { name: "Exalted Galahad (Arkveld SnS)", cls: "Sword & Shield", elem: "Dragon", bonus: "Guard + High Dragon" },
   { name: "Leumundslist (Gore Magala SnS)", cls: "Sword & Shield", elem: "Dragon", bonus: "20% Affinity" },
   { name: "Kurenawi Ougi (Mizutsune SnS)", cls: "Sword & Shield", elem: "Water", bonus: "High Water + Affinity" },
+  { name: "Lagiacrus Thunder SnS", cls: "Sword & Shield", elem: "Thunder", bonus: "High Thunder Element" },
   // Dual Blades
   { name: "Tiltkreise (Artian Tier 8 DB)", cls: "Dual Blades", elem: "Element / Blast", bonus: "3x Element Infusion" },
   { name: "Crossenders (Arkveld DB)", cls: "Dual Blades", elem: "Dragon", bonus: "Max Dragon Shredder" },
@@ -27,6 +29,7 @@ const NAMED_WEAPONS = [
   { name: "Exalted Perceval (Arkveld Hammer)", cls: "Hammer", elem: "Dragon", bonus: "Focus Built-In" },
   { name: "Omiltika (Artian Tier 8 Hunting Horn)", cls: "Hunting Horn", elem: "Dragon / Blast", bonus: "Attack Up (L) Echo" },
   { name: "Resounding Galahad (Arkveld HH)", cls: "Hunting Horn", elem: "Dragon", bonus: "Sharpness Restore Melody" },
+  { name: "Gogmazios Siege Hunting Horn", cls: "Hunting Horn", elem: "Dragon / Fire", bonus: "Heavy Dragon + All Melody" },
   // Lance & Gunlance
   { name: "Skyscraper (Artian Tier 8 Lance)", cls: "Lance", elem: "Dragon / Element", bonus: "Guard Up + High Raw" },
   { name: "Purifying Beaumains (Arkveld Lance)", cls: "Lance", elem: "Dragon", bonus: "Guard 3 Built-In" },
@@ -40,6 +43,7 @@ const NAMED_WEAPONS = [
   // Insect Glaive
   { name: "Diprielcha (Artian Tier 8 IG)", cls: "Insect Glaive", elem: "Dragon / Blast", bonus: "High Kinsect Level" },
   { name: "Virtuous Tristan (Arkveld IG)", cls: "Insect Glaive", elem: "Dragon", bonus: "Airborne / Power Prolonger" },
+  { name: "Seregios Razor Glaive", cls: "Insect Glaive", elem: "Raw / Bleed", bonus: "Auto-Sharpen on Evade" },
   // Bowguns & Bow
   { name: "Animilater (Artian Tier 8 LBG)", cls: "Light Bowgun", elem: "Pierce / Element", bonus: "Rapid Fire Pierce/Element" },
   { name: "Greifen (Artian Tier 8 HBG)", cls: "Heavy Bowgun", elem: "Pierce / Wyvernheart", bonus: "Ignition Mode Boost" },
@@ -89,7 +93,7 @@ const NAMED_WEAPONS = [
     const filtered = NAMED_WEAPONS.filter(w =>
       (w.name + ' ' + w.cls + ' ' + w.elem).toLowerCase().includes(q)
     );
-    dropList.innerHTML = filtered.map((w, idx) => `
+    dropList.innerHTML = filtered.map(w => `
       <div class="w-drop-item" data-name="${w.name}"
         style="padding:10px 12px;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;">
         <strong style="color:var(--text);">${w.name}</strong><br>
@@ -118,7 +122,7 @@ const NAMED_WEAPONS = [
 
   document.getElementById('w-ai-build-btn').addEventListener('click', () => {
     const goal = document.getElementById('w-ai-goal').value;
-   const elem = chosenWeapon.elem.split('/').shift().trim();
+    const elem = chosenWeapon.elem.split('/').shift().trim();
     const charms = { Fire: "Blaze Charm III", Water: "Stream Charm III", Thunder: "Bolt Charm III", Ice: "Frost Charm III", Dragon: "Dragon Charm III" };
     const wInfo = WEAPONS[chosenWeapon.cls];
 
