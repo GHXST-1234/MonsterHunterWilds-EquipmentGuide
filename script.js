@@ -62,7 +62,7 @@ document.getElementById('ai-generate').addEventListener('click', () => {
   const mName = document.getElementById('ai-monster').value;
   const style = document.getElementById('ai-style').value;
   const mObj = MH_DATA.monsters.find(m => m.name === mName) || MH_DATA.monsters;
-  const primaryElem = mObj.weak.split('/').trim();
+  const primaryElem = mObj.weak.split('/')[0].trim();
 
   const charmMap = {
     Fire: "Blaze Charm III (Fire Attack)",
@@ -74,26 +74,26 @@ document.getElementById('ai-generate').addEventListener('click', () => {
 
   const configs = {
     meta: {
-      cat: "AI Max Meta DPS",
-      gear: { Weapon: `Artian Tier 8 (${primaryElem} / Attack Roll)`, Helm: "Gore Helm Beta", Chest: "Arkvulcan Mail Beta", Arms: "Gore Vambraces Beta", Waist: "Arkvulcan Coil Beta", Legs: "Gore Greaves Beta", Talisman: "Challenger Charm II (Agitator)" },
+      cat: "AI 10★ Gamma Meta DPS",
+      gear: { Weapon: `Artian Tier 8 (${primaryElem} / Attack Roll)`, Helm: "Rey Sandhelm Gamma (γ)", Chest: "Arkvulcan Mail Gamma (γ)", Arms: "Rey Sandbraces Gamma (γ)", Waist: "Gore Coil Beta", Legs: "Gore Greaves Beta", Talisman: "Challenger Charm III (Agitator)" },
       jewels: "Tenderizer Jewel III x2, Challenger Jewel III x2, Mighty Jewel II x3, Sane Jewel I x2",
-      skills: "Agitator 5, Weakness Exploit 5, Antivirus 3, Maximum Might 3, Black Eclipse I"
+      skills: "Lord's Soul (+5% Raw + Guts), Agitator 5, Weakness Exploit 5, Antivirus 3, Max Might 3"
     },
     counter: {
       cat: "AI Elemental & Blight Counter",
-      gear: { Weapon: `${primaryElem} Element Monster / Artian Tree`, Helm: "Gore Helm Beta", Chest: "Udra / Dahaad Counter Mail Beta", Arms: "Gore Vambraces Beta", Waist: "Arkvulcan Coil Beta", Legs: "Gore Greaves Beta", Talisman: charmMap[primaryElem] || "Challenger Charm II" },
-      jewels: `Tenderizer Jewel III x2, Phoenix Jewel II x2 (Coalescence), Sane Jewel I x3`,
+      gear: { Weapon: `${primaryElem} Element Monster / Artian Tree`, Helm: "Gore Helm Beta", Chest: "Arkvulcan Mail Gamma (γ)", Arms: "Gore Vambraces Beta", Waist: "Arkvulcan Coil Beta", Legs: "Gore Greaves Beta", Talisman: charmMap[primaryElem] || "Challenger Charm III" },
+      jewels: "Tenderizer Jewel III x2, Phoenix Jewel II x2 (Coalescence), Sane Jewel I x3",
       skills: `${primaryElem} Attack 3, Weakness Exploit 5, Coalescence 3, Antivirus 3`
     },
     comfy: {
-      cat: "AI Immortal Anti-Cart",
-      gear: { Weapon: `Artian / Arkveld (${primaryElem} Element)`, Helm: "Arkvulcan Helm Beta", Chest: "Arkvulcan Mail Beta", Arms: "G. Arkveld Vambraces Beta", Waist: "Arkvulcan Coil Beta", Legs: "G. Arkveld Greaves Beta", Talisman: "Blessing Charm III (Divine Blessing)" },
+      cat: "AI Arch-Tempered Anti-Cart",
+      gear: { Weapon: `Artian / Arkveld (${primaryElem} Element)`, Helm: "Arkvulcan Helm Gamma (γ)", Chest: "Arkvulcan Mail Gamma (γ)", Arms: "Dahaad Shardbraces Gamma (γ)", Waist: "Uth Duna Coil Gamma (γ)", Legs: "G. Arkveld Greaves Beta", Talisman: "Defense Charm V / Blessing Charm III" },
       jewels: "Protection Jewel I x3, Medicine Jewel I x3 (Recovery Up), Tenderizer Jewel III x2",
-      skills: "Hasten Recovery II, Decimator II, Divine Blessing 3, Recovery Up 3, Weakness Exploit 5"
+      skills: "Lord's Soul (Guts), Hasten Recovery II, Divine Blessing 3, Recovery Up 3, Weakness Exploit 5"
     },
     partbreak: {
       cat: "AI Wound & Partbreaker",
-      gear: { Weapon: `Artian Tier 8 (${primaryElem} / Affinity Roll)`, Helm: "G. Arkveld Helm Beta", Chest: "Arkvulcan Mail Beta", Arms: "G. Arkveld Vambraces Beta", Waist: "Gore Coil Beta", Legs: "Gore Greaves Beta", Talisman: "Destroyer Charm II (Partbreaker)" },
+      gear: { Weapon: `Artian Tier 8 (${primaryElem} / Affinity Roll)`, Helm: "G. Arkveld Helm Beta", Chest: "Arkvulcan Mail Gamma (γ)", Arms: "G. Arkveld Vambraces Beta", Waist: "Gore Coil Beta", Legs: "Gore Greaves Beta", Talisman: "Destroyer Charm II (Partbreaker)" },
       jewels: "Destroyer Jewel II x2, Flayer Jewel III x2, Tenderizer Jewel III x2, Sane Jewel I x2",
       skills: "Partbreaker 3, Flayer 5, Weakness Exploit 5, Antivirus 3, Decimator I"
     }
