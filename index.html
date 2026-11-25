@@ -19,8 +19,9 @@
       </select>
     </div>
     <div class="tabs">
-      <button type="button" class="tab active" data-tab="meta">Meta & Counter Builds</button>
-      <button type="button" class="tab" data-tab="ai">AI Build Advisor</button>
+      <button type="button" class="tab active" data-tab="meta">Meta Builds</button>
+      <button type="button" class="tab" data-tab="ai">Monster AI</button>
+      <button type="button" class="tab" data-tab="weapon-ai">Weapon AI</button>
     </div>
   </header>
 
@@ -37,7 +38,7 @@
 
   <section id="ai-view" class="hidden">
     <div class="ai-box">
-      <label>1. Your Weapon</label>
+      <label>1. Your Weapon Class</label>
       <select id="ai-weapon"></select>
       <label>2. Target Monster</label>
       <select id="ai-monster"></select>
@@ -53,6 +54,9 @@
     <div id="ai-result"></div>
   </section>
 
-  <script src="app.js?v=3"></script>
+  <section id="weapon-ai-view" class="hidden"></section>
+
+  <script src="app.js?v=6"></script>
+  <script src="weapons-ai.js?v=1"></script>
 </body>
 </html>
